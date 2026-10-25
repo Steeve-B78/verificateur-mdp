@@ -1,0 +1,1 @@
+Prochaine séance : étape 5, renvoyer un dictionnaire avec la longueur

@@ -20,7 +20,14 @@ def analyser_composition(mdp):
                     a_chiffre = True
         if c in string.punctuation:
                     a_symbole = True
-    return a_minuscule, a_majuscule, a_chiffre, a_symbole
+    return {"longueur": len(mdp),  
+            "minuscule": a_minuscule, 
+            "majuscule": a_majuscule, 
+            "chiffres": a_chiffre, 
+            "symboles": a_symbole}
+
+
+
 
         
 
