@@ -1,1 +1,1 @@
-Prochaine séance : étape 5, renvoyer un dictionnaire avec la longueur
+Prochaine séance : étape 7, demander le mot de passe avec getpass
