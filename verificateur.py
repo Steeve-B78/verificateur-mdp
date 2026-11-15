@@ -1,9 +1,12 @@
 import string
 import math
+import pwinput
 #print(string.ascii_lowercase)  # "abc"
 #print(string.digits)           # "123"
 #print(string.ascii_uppercase)  # "ABC"
 #print(string.punctuation)      # "%&*()"
+
+
 
 
 def analyser_composition(mdp):
@@ -44,15 +47,28 @@ def calculer_entropie(analyse):
                 return 0 
         return analyse["longueur"]*math.log2(taille)
                 
-                
+if __name__ == "__main__":               
+        mot_de_passe = pwinput.pwinput("Saissisez votre mot de passe : ")
+        analyse = analyser_composition(mot_de_passe)
+        bits = calculer_entropie(analyse)
+
+        print(f"Longueur : {analyse['longueur']}")
+        print(f"Minuscules : {'oui' if analyse['minuscules'] else 'non'}")
+        print(f"Majuscules : {'oui' if analyse['majuscules'] else 'non'}")
+        print(f"Chiffres : {'oui' if analyse['chiffres'] else 'non'}")
+        print(f"Symboles : {'oui' if analyse['symboles'] else 'non'}")
+        print(f"Etropie : {bits:.1f} bits")
+        
+        
+        
+        
 
 
 
-print(calculer_entropie(analyser_composition("()#")))      
-print(calculer_entropie(analyser_composition("abcdefgh")))
-print(calculer_entropie(analyser_composition("")))
-#print(analyser_composition("ABC123"))
-#print(analyser_composition("Exemple#2026"))
+
+
+
+
 
 
 
