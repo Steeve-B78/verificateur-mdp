@@ -1,1 +1,1 @@
-Prochaine séance : étape 7, demander le mot de passe avec getpass
+Prochaine séance : étape 8, créer un dépot vide sur GitHub
