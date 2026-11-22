@@ -67,6 +67,24 @@ def evaluer_robustesse(bits):
                 return "Moyen"     
         else:
                 return "Faible"
+
+
+
+def donner_conseils(analyse):
+        conseils = []
+        if not analyse["minuscules"]:
+                conseils.append("Ajoute des lettres minuscules")
+        if not analyse["majuscules"]:
+                conseils.append("Ajoute des lettres majuscules")
+        if not analyse["chiffres"]:
+                conseils.append("Ajoute des chiffres")
+        if not analyse["symboles"]:
+                conseils.append("Ajoute des symboles")
+        if analyse["longueur"] < 6:
+                conseils.append("Veuillez saisir un mot de passe plus long")
+        return conseils
+        
+
         
 
 
