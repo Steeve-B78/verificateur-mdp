@@ -1,1 +1,1 @@
-Prochaine séance : étape 9, Créer le dossier tests et écrire un premier test sur calculer_entropie
+Prochaine séance : étape 10, écrire evaluer_robustesse (faible / moyen / fort selon les bits) avec ses tests, puis donner_conseils.
