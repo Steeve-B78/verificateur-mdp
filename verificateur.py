@@ -60,7 +60,13 @@ if __name__ == "__main__":
         print(f"Etropie : {bits:.1f} bits")
         
         
-        
+def evaluer_robustesse(bits):
+        if bits > 60:
+                return "Fort"  
+        elif bits > 40 and bits <= 60:
+                return "Moyen"     
+        else:
+                return "Faible"
         
 
 

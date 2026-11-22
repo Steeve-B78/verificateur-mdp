@@ -1,4 +1,4 @@
-from verificateur import analyser_composition, calculer_entropie
+from verificateur import analyser_composition, calculer_entropie, evaluer_robustesse
 import pytest
 
 
@@ -42,6 +42,26 @@ def test_entropie_chaîne_vide():
 def test_entropie_all():
     analyse = analyser_composition("Aa1#")
     assert calculer_entropie(analyse)== pytest.approx(26.21835540671055)
+
+
+def test_robustesse_faible():
+    seuils = 40
+    assert evaluer_robustesse(seuils) == "Faible"
+
+
+def test_robustesse_fort():
+    seuils = 80
+    assert evaluer_robustesse(seuils) == "Fort"
+
+def test_robustesse_moyen():
+    seuils = 50
+    assert evaluer_robustesse(seuils) == "Moyen"
+
+def test_robustesse_limite_60_bits():
+    seuils = 60
+    assert evaluer_robustesse(seuils) == "Moyen"
+
+
 
 
 
