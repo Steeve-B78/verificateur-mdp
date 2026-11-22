@@ -1,1 +1,1 @@
-Prochaine séance : étape 8, créer un dépot vide sur GitHub
+Prochaine séance : étape 9, Créer le dossier tests et écrire un premier test sur calculer_entropie
