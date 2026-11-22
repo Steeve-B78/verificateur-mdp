@@ -46,28 +46,6 @@ def calculer_entropie(analyse):
         if taille == 0:
                 return 0 
         return analyse["longueur"]*math.log2(taille)
-                
-if __name__ == "__main__":               
-        mot_de_passe = pwinput.pwinput("Saissisez votre mot de passe : ")
-        analyse = analyser_composition(mot_de_passe)
-        bits = calculer_entropie(analyse)
-
-        print(f"Longueur : {analyse['longueur']}")
-        print(f"Minuscules : {'oui' if analyse['minuscules'] else 'non'}")
-        print(f"Majuscules : {'oui' if analyse['majuscules'] else 'non'}")
-        print(f"Chiffres : {'oui' if analyse['chiffres'] else 'non'}")
-        print(f"Symboles : {'oui' if analyse['symboles'] else 'non'}")
-        print(f"Etropie : {bits:.1f} bits")
-        
-        
-def evaluer_robustesse(bits):
-        if bits > 60:
-                return "Fort"  
-        elif bits > 40 and bits <= 60:
-                return "Moyen"     
-        else:
-                return "Faible"
-
 
 
 def donner_conseils(analyse):
@@ -83,6 +61,44 @@ def donner_conseils(analyse):
         if analyse["longueur"] < 6:
                 conseils.append("Veuillez saisir un mot de passe plus long")
         return conseils
+        
+def evaluer_robustesse(bits):
+        if bits > 60:
+                return "Fort"  
+        elif bits > 40 and bits <= 60:
+                return "Moyen"     
+        else:
+                return "Faible"
+
+
+        
+
+                
+if __name__ == "__main__":               
+        mot_de_passe = pwinput.pwinput("Saissisez votre mot de passe : ")
+        analyse = analyser_composition(mot_de_passe)
+        bits = calculer_entropie(analyse)
+        conseils = donner_conseils(analyse)
+        niveau = evaluer_robustesse(bits)
+
+        print(f"Longueur : {analyse['longueur']}")
+        print(f"Minuscules : {'oui' if analyse['minuscules'] else 'non'}")
+        print(f"Majuscules : {'oui' if analyse['majuscules'] else 'non'}")
+        print(f"Chiffres : {'oui' if analyse['chiffres'] else 'non'}")
+        print(f"Symboles : {'oui' if analyse['symboles'] else 'non'}")
+        print(f"Entropie : {bits:.1f} bits")
+        print(f"Niveau : {niveau}")
+        if conseils:
+                print("Conseils pour l'améliorer:")
+                for conseil in conseils:
+                        print(f"- {conseil}")
+
+        
+        
+
+
+
+
         
 
         
