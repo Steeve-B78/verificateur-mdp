@@ -51,13 +51,13 @@ def calculer_entropie(analyse):
 def donner_conseils(analyse):
         conseils = []
         if not analyse["minuscules"]:
-                conseils.append("Ajoute des lettres minuscules")
+                conseils.append("Ajoutez des lettres minuscules")
         if not analyse["majuscules"]:
-                conseils.append("Ajoute des lettres majuscules")
+                conseils.append("Ajoutez des lettres majuscules")
         if not analyse["chiffres"]:
-                conseils.append("Ajoute des chiffres")
+                conseils.append("Ajoutez des chiffres")
         if not analyse["symboles"]:
-                conseils.append("Ajoute des symboles")
+                conseils.append("Ajoutez des symboles")
         if analyse["longueur"] < 6:
                 conseils.append("Veuillez saisir un mot de passe plus long")
         return conseils
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         print(f"Entropie : {bits:.1f} bits")
         print(f"Niveau : {niveau}")
         if conseils:
-                print("Conseils pour l'améliorer:")
+                print("Conseils pour l'améliorer :")
                 for conseil in conseils:
                         print(f"- {conseil}")
 
